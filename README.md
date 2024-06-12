@@ -1,10 +1,10 @@
-# Business Central API fieazdzalds optimization :safety_vest:
+# Business Central API fields optimization :safety_vest:
 
 This project is a simple tool to search which fields returned by the Business Central API are used in the project. The goal is to optimize the API calls by only returning the fields that are used in the project.
 
 ## Table of contents
 
-- [Business Central API fieazdzalds optimization :safety\_vest:](#business-central-api-fieazdzalds-optimization-safety_vest)
+- [Business Central API fields optimization :safety\_vest:](#business-central-api-fields-optimization-safety_vest)
   - [Table of contents](#table-of-contents)
   - [How to use it ?](#how-to-use-it-)
   - [Technologies](#technologies)
