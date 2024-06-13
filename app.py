@@ -100,20 +100,30 @@ with open("targets.json") as f:
                                     key)][2].append([root, file])
 
     for entity in keys_by_entity:
-        with open(f"entities/{entity[0]}.txt", "w", encoding="utf-8") as f:
-            f.write(f"Entity: {entity[0]}\n\n")
+        count_of_unused_keys = len(
+            [key for key in entity[1] if not key[1]])
 
-            count_of_unused_keys = len(
-                [key for key in entity[1] if not key[1]])
+        count_of_used_keys = len(
+            [key for key in entity[1] if key[1]])
 
-            f.write("❌ Unused keys (count: {}):\n".format(count_of_unused_keys))
+        with open(f"entities/unused_keys.txt", "a", encoding="utf-8") as f:
+            f.write(f"Entity: {entity[0]} ({
+                    count_of_unused_keys} unused keys)\n\n")
+
             for key in entity[1]:
                 if not key[1]:
                     f.write(f"- {key[0]}\n")
 
-            f.write("\n\n✅ Used keys:\n")
+            f.write("\n")
+
+        with open(f"entities/used_keys.txt", "a", encoding="utf-8") as f:
+            f.write(f"Entity: {entity[0]} ({
+                count_of_used_keys} used keys)\n\n")
+
             for key in entity[1]:
                 if key[1]:
                     f.write(f"- {key[0]}\n")
                     for path in key[2]:
                         f.write(f"  - {path[0]}/{path[1]}\n")
+
+            f.write("\n")
