@@ -57,11 +57,11 @@ Run the script
 $ python app.py
 ```
 
-The script will generate a `txt` file for each entity in the `entities` directory, with the fields used or not.
+The script will generate a `unused_keys.txt` file with the unused fields for each entity. And a `used_keys.txt` file with the used fields for each entity.
 
 ```bash
 $ ls entities
-contacts.txt customers.txt someentity.txt
+unused_keys.txt  used_keys.txt
 ```
 
 ## Technologies
